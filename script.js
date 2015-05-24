@@ -1,26 +1,29 @@
 $(document).ready(function() {
+	//Initial grid is 16x16
 	createGrid(16);
 });
 
 function btnClear_onClick() {
-	$('.row div').removeClass('highlight');
-
+	//Create a new grid per user input
 	var nDim = prompt("Enter dimensions for new grid:");
 	createGrid(nDim);
 }
 
 function createGrid(nDim) {
+	//The grid wrapper is always the same px size
 	var nWidth = $('#wrapper').width();
 	var nResolution = nWidth / nDim;
 	
+	//Remove current grid
 	$('#wrapper div').remove();
 
+	//Add nDim # of rows
 	for (var i = 0; i < nDim; i++) {
 		addRow(nDim, nResolution);
 		console.log("added row ", i + 1);
 	}
 
-	//Color the cells as you move the mouse
+	//Color the cells random colors as you move the mouse
 	$('.row div').hover(
 		function() {
 			var rgb = "rgb("
@@ -34,7 +37,7 @@ function createGrid(nDim) {
 		}
 	);
 
-	console.log('done');
+	console.log("done creating grid");
 }
 
 function addRow(nDim, nResolution) {
