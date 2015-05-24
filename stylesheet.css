@@ -1,0 +1,20 @@
+.row {
+	display: block;
+	height: 30px;
+}
+
+.row div {
+	display:inline-block;
+	background-color: gray;
+	height: 30px;
+	width: 30px;
+}
+
+#btnClear {
+	margin: 8px;
+}
+
+#wrapper {
+	width: 500px;
+	height: 500px;
+}
